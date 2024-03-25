@@ -1,23 +1,25 @@
 import { create } from "zustand";
+import { nanoid } from "nanoid";
 
 interface FlashcardState {
   flashcards: Flashcard[];
   addFlashcard: (flashcard: Flashcard) => void;
-  updateFlashcard: (id: number, flashcard: Flashcard) => void;
-  deleteFlashcard: (id: number) => void;
+  updateFlashcard: (id: string, flashcard: Flashcard) => void;
+  deleteFlashcard: (id: string) => void;
 }
 
 export const useFlashcardsStore = create<FlashcardState>()((set) => ({
   flashcards: [
     {
-      id: 1,
+      id: nanoid(),
+      questionNumber: 1,
       question: "Type your question here",
       answer: "Type your answer here",
     },
   ],
   addFlashcard: (flashcard: Flashcard) =>
     set((state) => ({ flashcards: [...state.flashcards, flashcard] })),
-  updateFlashcard: (id: number, flashcard: Flashcard) =>
+  updateFlashcard: (id: string, flashcard: Flashcard) =>
     set((state) => ({
       flashcards: state.flashcards.map((card) => {
         if (card.id === id) {
@@ -26,8 +28,15 @@ export const useFlashcardsStore = create<FlashcardState>()((set) => ({
         return card;
       }),
     })),
-  deleteFlashcard: (id: number) =>
+  deleteFlashcard: (id: string) => {
     set((state) => ({
       flashcards: state.flashcards.filter((card) => card.id !== id),
-    })),
+    }));
+    set((state) => ({
+      flashcards: state.flashcards.map((card, index) => ({
+        ...card,
+        questionNumber: index + 1,
+      })),
+    }));
+  },
 }));

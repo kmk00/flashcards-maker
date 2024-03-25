@@ -23,7 +23,9 @@ const FlashcardsDocument = ({ flashcards }: Props) => {
         {flashcards
           ? flashcards.map((flashcard) => (
               <View key={flashcard.id} style={styles.section}>
-                <Text>{flashcard.question}</Text>
+                <Text>
+                  {flashcard.questionNumber}.&nbsp;{flashcard.question}
+                </Text>
                 <Text>{flashcard.answer}</Text>
               </View>
             ))

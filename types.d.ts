@@ -1,5 +1,6 @@
 type Flashcard = {
-  id: number;
+  id: string;
+  questionNumber: number;
   question: string;
   answer: string;
 };

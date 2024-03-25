@@ -19,7 +19,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <div className="flex max-h-screen overflow-none p-4">
+        <div className="flex max-h-screen justify-center overflow-none p-4">
           <Options />
           {children}
         </div>

@@ -2,13 +2,15 @@
 
 import { useFlashcardsStore } from "@/store/flashcards";
 import FlashcardInput from "./FlashcardInput";
+import { nanoid } from "nanoid";
 
 const Flashcards = () => {
   const { flashcards, addFlashcard } = useFlashcardsStore();
 
   const addNewFlashcard = () => {
     addFlashcard({
-      id: flashcards.length + 1,
+      id: nanoid(),
+      questionNumber: flashcards.length + 1,
       question: "Type your question here",
       answer: "Type your answer here",
     });
@@ -22,7 +24,11 @@ const Flashcards = () => {
       </button>
       <div className="w-full flex-col-reverse flex">
         {flashcards.map((flashcard) => (
-          <FlashcardInput key={flashcard.id} index={flashcard.id} />
+          <FlashcardInput
+            key={flashcard.id}
+            id={flashcard.id}
+            questionNumber={flashcard.questionNumber}
+          />
         ))}
       </div>
     </>
