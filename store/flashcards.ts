@@ -4,6 +4,7 @@ interface FlashcardState {
   flashcards: Flashcard[];
   addFlashcard: (flashcard: Flashcard) => void;
   updateFlashcard: (id: number, flashcard: Flashcard) => void;
+  deleteFlashcard: (id: number) => void;
 }
 
 export const useFlashcardsStore = create<FlashcardState>()((set) => ({
@@ -24,5 +25,9 @@ export const useFlashcardsStore = create<FlashcardState>()((set) => ({
         }
         return card;
       }),
+    })),
+  deleteFlashcard: (id: number) =>
+    set((state) => ({
+      flashcards: state.flashcards.filter((card) => card.id !== id),
     })),
 }));

@@ -9,8 +9,8 @@ const Flashcards = () => {
   const addNewFlashcard = () => {
     addFlashcard({
       id: flashcards.length + 1,
-      question: "",
-      answer: "",
+      question: "Type your question here",
+      answer: "Type your answer here",
     });
   };
 

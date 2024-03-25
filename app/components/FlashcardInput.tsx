@@ -9,7 +9,7 @@ const FlashcardInput = ({ index }: Props) => {
   const [question, setQuestion] = useState<string>("Type your question here");
   const [answer, setAnswer] = useState<string>("Type your answer here");
 
-  const { updateFlashcard } = useFlashcardsStore();
+  const { updateFlashcard, deleteFlashcard } = useFlashcardsStore();
 
   const handleQuestionChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setQuestion(event.target.value);
@@ -36,15 +36,24 @@ const FlashcardInput = ({ index }: Props) => {
         type="text"
         placeholder="Type your answer here"
       />
-
-      <button
-        className="text-left"
-        onClick={() => {
-          updateFlashcard(index, { id: index, question, answer });
-        }}
-      >
-        Set flashcard
-      </button>
+      <div className="flex gap-2 py-2">
+        <button
+          className="text-left"
+          onClick={() => {
+            updateFlashcard(index, { id: index, question, answer });
+          }}
+        >
+          Set flashcard
+        </button>
+        <button
+          className="text-left"
+          onClick={() => {
+            deleteFlashcard(index);
+          }}
+        >
+          Delete
+        </button>
+      </div>
     </div>
   );
 };
