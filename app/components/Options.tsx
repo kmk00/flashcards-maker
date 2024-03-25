@@ -2,7 +2,7 @@ import Flashcards from "./Flashcards";
 
 const Options = () => {
   return (
-    <div className="p-4 min-w-[300px]">
+    <div className="flex flex-col justify-start items-center min-w-[600px] overflow-y-auto lg:pr-4">
       <Flashcards />
     </div>
   );

@@ -1,5 +1,32 @@
+"use client";
+
+import { useFlashcardsStore } from "@/store/flashcards";
+import FlashcardInput from "./FlashcardInput";
+
 const Flashcards = () => {
-  return <div>Flashcards</div>;
+  const { flashcards, addFlashcard } = useFlashcardsStore();
+
+  const addNewFlashcard = () => {
+    addFlashcard({
+      id: flashcards.length + 1,
+      question: "",
+      answer: "",
+    });
+  };
+
+  return (
+    <>
+      <h1 className="text-2xl">Create Flashcards</h1>
+      <button className="mt-3 mx-auto" onClick={addNewFlashcard}>
+        Add new
+      </button>
+      <div className="w-full flex-col-reverse flex">
+        {flashcards.map((flashcard) => (
+          <FlashcardInput key={flashcard.id} index={flashcard.id} />
+        ))}
+      </div>
+    </>
+  );
 };
 
 export default Flashcards;

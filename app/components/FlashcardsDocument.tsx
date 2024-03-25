@@ -1,5 +1,9 @@
 import { Page, Text, View, Document, StyleSheet } from "@react-pdf/renderer";
 
+type Props = {
+  flashcards: Flashcard[];
+};
+
 const styles = StyleSheet.create({
   page: {
     flexDirection: "row",
@@ -12,16 +16,18 @@ const styles = StyleSheet.create({
   },
 });
 
-const FlashcardsDocument = () => {
+const FlashcardsDocument = ({ flashcards }: Props) => {
   return (
     <Document>
-      <Page size="A4" style={styles.page}>
-        <View style={styles.section}>
-          <Text>Section #1</Text>
-        </View>
-        <View style={styles.section}>
-          <Text>Section #2</Text>
-        </View>
+      <Page wrap size="A4" style={styles.page}>
+        {flashcards
+          ? flashcards.map((flashcard) => (
+              <View key={flashcard.id} style={styles.section}>
+                <Text>{flashcard.question}</Text>
+                <Text>{flashcard.answer}</Text>
+              </View>
+            ))
+          : null}
       </Page>
     </Document>
   );

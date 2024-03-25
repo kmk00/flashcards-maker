@@ -2,6 +2,7 @@
 
 import dynamic from "next/dynamic";
 import FlashcardsDocument from "./FlashcardsDocument";
+import { useFlashcardsStore } from "@/store/flashcards";
 
 const PDFViewer = dynamic(
   () => import("@react-pdf/renderer").then((mod) => mod.PDFViewer),
@@ -12,10 +13,12 @@ const PDFViewer = dynamic(
 );
 
 const ExamplePage = () => {
+  const { flashcards } = useFlashcardsStore();
+
   return (
     <div className="hidden lg:block">
       <PDFViewer style={{ width: "100%", height: "90dvh" }}>
-        <FlashcardsDocument />
+        <FlashcardsDocument flashcards={flashcards} />
       </PDFViewer>
     </div>
   );
