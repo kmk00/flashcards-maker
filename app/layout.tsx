@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import DocumentComponent from "./components/DocumentComponent";
+import Options from "./components/Options";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,7 +18,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <div className="flex p-4">
+          <Options />
+          {children}
+        </div>
+        <DocumentComponent />
+      </body>
     </html>
   );
 }
