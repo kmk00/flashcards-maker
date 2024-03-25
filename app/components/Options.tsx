@@ -1,4 +1,5 @@
 import Flashcards from "./Flashcards";
+import Spinner from "./Spinner";
 
 const Options = () => {
   return (
