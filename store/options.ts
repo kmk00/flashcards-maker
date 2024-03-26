@@ -1,15 +1,21 @@
 import { create } from "zustand";
 
-interface OptionsState {
-  showOptions: boolean;
-  setShowOptions: (showOptions: boolean) => void;
-  displayOptions: () => void;
-  hideOptions: () => void;
+enum Mode {
+  Fold = "fold",
+  Single = "single",
+  Reverse = "reverse",
 }
 
 export const usePDFOptions = create<OptionsState>()((set) => ({
+  currentOptions: {
+    mode: Mode.Fold,
+    textColor: "#000000",
+    width: 250,
+    height: 250,
+  },
   showOptions: false,
-  setShowOptions: (showOptions) => set({ showOptions }),
+  setNewOptions: (newOptions: PDFOptions) =>
+    set({ currentOptions: newOptions }),
   displayOptions: () => set({ showOptions: true }),
   hideOptions: () => set({ showOptions: false }),
 }));

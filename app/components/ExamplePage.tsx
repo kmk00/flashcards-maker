@@ -5,6 +5,7 @@ import FlashcardsDocument from "./FlashcardsDocument";
 import { useFlashcardsStore } from "@/store/flashcards";
 import Spinner from "./Spinner";
 import { usePDFOptions } from "@/store/options";
+import PDFOptionsComponent from "./PDFOptionsComponent";
 
 const PDFViewer = dynamic(
   () => import("@react-pdf/renderer").then((mod) => mod.PDFViewer),
@@ -24,7 +25,7 @@ const ExamplePage = () => {
           <FlashcardsDocument flashcards={flashcards} />
         </PDFViewer>
       ) : (
-        <p>Options</p>
+        <PDFOptionsComponent />
       )}
     </>
   );
