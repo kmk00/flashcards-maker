@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import DocumentComponent from "./components/DocumentComponent";
-import Options from "./components/Options";
+import FlashcardsOptions from "./components/FlashcardsOptions";
+import PDFOptionsButton from "./components/PDFOptionsButton";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,8 +21,9 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <div className="flex max-h-screen justify-center overflow-none p-4">
-          <Options />
+          <FlashcardsOptions />
           {children}
+          <PDFOptionsButton />
         </div>
         <DocumentComponent />
       </body>

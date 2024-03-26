@@ -7,7 +7,7 @@ interface OptionsState {
   hideOptions: () => void;
 }
 
-export const useFlashcardsStore = create<OptionsState>()((set) => ({
+export const usePDFOptions = create<OptionsState>()((set) => ({
   showOptions: false,
   setShowOptions: (showOptions) => set({ showOptions }),
   displayOptions: () => set({ showOptions: true }),

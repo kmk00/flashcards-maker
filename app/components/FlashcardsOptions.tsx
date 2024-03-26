@@ -1,7 +1,6 @@
 import Flashcards from "./Flashcards";
-import Spinner from "./Spinner";
 
-const Options = () => {
+const FlashcardsOptions = () => {
   return (
     <div className="flex flex-col justify-start items-center min-w-[600px] overflow-y-auto ">
       <Flashcards />
@@ -9,4 +8,4 @@ const Options = () => {
   );
 };
 
-export default Options;
+export default FlashcardsOptions;
