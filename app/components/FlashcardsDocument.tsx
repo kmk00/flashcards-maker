@@ -18,10 +18,24 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     gap: "10px",
+    padding: "20px",
+  },
+  number: {
+    textAlign: "center",
+    fontSize: "20px",
+  },
+  question: {
+    fontSize: 16,
+    textAlign: "center",
+    textDecoration: "underline",
+    paddingBottom: "10px",
+    fontWeight: "black",
+    maxWidth: "100%",
   },
   text: {
     fontSize: 16,
     textAlign: "center",
+    maxWidth: "100%",
   },
 });
 
@@ -32,9 +46,8 @@ const FlashcardsDocument = ({ flashcards }: Props) => {
         {flashcards
           ? flashcards.map((flashcard) => (
               <View key={flashcard.id} style={styles.section}>
-                <Text style={styles.text}>
-                  {flashcard.questionNumber}.&nbsp;{flashcard.question}
-                </Text>
+                <Text style={styles.number}>{flashcard.questionNumber}</Text>
+                <Text style={styles.question}>{flashcard.question}</Text>
                 <Text style={styles.text}>{flashcard.answer}</Text>
               </View>
             ))

@@ -17,9 +17,11 @@ const ExamplePage = () => {
   const { flashcards } = useFlashcardsStore();
 
   return (
-    <PDFViewer style={{ width: "100%", height: "90dvh" }}>
-      <FlashcardsDocument flashcards={flashcards} />
-    </PDFViewer>
+    <>
+      <PDFViewer style={{ width: "100%", height: "90dvh" }}>
+        <FlashcardsDocument flashcards={flashcards} />
+      </PDFViewer>
+    </>
   );
 };
 
