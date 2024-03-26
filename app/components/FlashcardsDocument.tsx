@@ -7,26 +7,35 @@ type Props = {
 const styles = StyleSheet.create({
   page: {
     flexDirection: "row",
-    backgroundColor: "#E4E4E4",
+    flexWrap: "wrap",
+    justifyContent: "flex-start",
   },
   section: {
-    margin: 10,
-    padding: 10,
-    flexGrow: 1,
+    border: 1,
+    height: "250px",
+    width: "250px",
+    borderStyle: "dashed",
+    justifyContent: "center",
+    alignItems: "center",
+    gap: "10px",
+  },
+  text: {
+    fontSize: 16,
+    textAlign: "center",
   },
 });
 
 const FlashcardsDocument = ({ flashcards }: Props) => {
   return (
     <Document>
-      <Page wrap size="A4" style={styles.page}>
+      <Page size="A4" wrap style={styles.page}>
         {flashcards
           ? flashcards.map((flashcard) => (
               <View key={flashcard.id} style={styles.section}>
-                <Text>
+                <Text style={styles.text}>
                   {flashcard.questionNumber}.&nbsp;{flashcard.question}
                 </Text>
-                <Text>{flashcard.answer}</Text>
+                <Text style={styles.text}>{flashcard.answer}</Text>
               </View>
             ))
           : null}
