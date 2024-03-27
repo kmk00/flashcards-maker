@@ -9,7 +9,8 @@ type Flashcard = {
 
 type PDFOptions = {
   width: number;
-  textColor: string;
+  questionColor: string;
+  answerColor: string;
   height: number;
   mode: Mode;
 };

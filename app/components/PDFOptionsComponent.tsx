@@ -96,12 +96,22 @@ const PDFOptionsComponent = () => {
           </select>
         </div>
         <div className="flex gap-4 flex-col">
-          <p>Text Color</p>
+          <p>Question Color</p>
           <HexColorPicker
             className=" "
-            color={settings.textColor}
+            color={settings.questionColor}
             onChange={(setColor) =>
-              setSettings({ ...settings, textColor: setColor })
+              setSettings({ ...settings, questionColor: setColor })
+            }
+          />
+        </div>
+        <div className="flex gap-4 flex-col">
+          <p>Answer Color</p>
+          <HexColorPicker
+            className=" "
+            color={settings.answerColor}
+            onChange={(setColor) =>
+              setSettings({ ...settings, answerColor: setColor })
             }
           />
         </div>
@@ -114,8 +124,14 @@ const PDFOptionsComponent = () => {
               {settings.width} x {settings.height}
             </p>
             <p>{settings.mode}</p>
-            <p style={{ color: settings.textColor }} className="p-2 bg-white">
-              New text color
+            <p
+              style={{ color: settings.questionColor }}
+              className="p-2 bg-white"
+            >
+              New question color
+            </p>
+            <p style={{ color: settings.answerColor }} className="p-2 bg-white">
+              New answer color
             </p>
           </div>
         </div>
@@ -127,10 +143,16 @@ const PDFOptionsComponent = () => {
             </p>
             <p>{currentOptions.mode}</p>
             <p
-              style={{ color: currentOptions.textColor }}
+              style={{ color: currentOptions.questionColor }}
               className="p-2 bg-white"
             >
-              Current text color
+              Current question color
+            </p>
+            <p
+              style={{ color: currentOptions.answerColor }}
+              className="p-2 bg-white"
+            >
+              Current answer color
             </p>
           </div>
         </div>

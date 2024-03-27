@@ -17,12 +17,17 @@ const PDFViewer = dynamic(
 
 const ExamplePage = () => {
   const { flashcards } = useFlashcardsStore();
-  const { showOptions } = usePDFOptions();
+  const { showOptions, currentOptions } = usePDFOptions();
+
   return (
     <>
       {!showOptions ? (
         <PDFViewer style={{ width: "100%", height: "90dvh" }}>
-          <FlashcardsDocument flashcards={flashcards} />
+          <FlashcardsDocument
+            questionColor={currentOptions.questionColor}
+            answerColor={currentOptions.answerColor}
+            flashcards={flashcards}
+          />
         </PDFViewer>
       ) : (
         <PDFOptionsComponent />
