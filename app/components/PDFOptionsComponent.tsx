@@ -1,6 +1,7 @@
 import { usePDFOptions } from "@/store/options";
 import { useState } from "react";
 import { HexColorPicker } from "react-colorful";
+import DisplayOptions from "./DisplayOptions";
 
 const PDFOptionsComponent = () => {
   const { hideOptions, currentOptions, setNewOptions } = usePDFOptions();
@@ -29,28 +30,37 @@ const PDFOptionsComponent = () => {
             type="button"
             className="bg-slate-700 p-2"
             name="width"
-            value={200}
+            value={190}
             onClick={handleSettingsChange}
           >
-            200
+            small
           </button>
           <button
             type="button"
             className="bg-slate-700 p-2"
             name="width"
-            value={250}
+            value={225}
             onClick={handleSettingsChange}
           >
-            250
+            medium
           </button>
           <button
             type="button"
             className="bg-slate-700 p-2"
             name="width"
-            value={300}
+            value={280}
             onClick={handleSettingsChange}
           >
-            300
+            big
+          </button>
+          <button
+            type="button"
+            className="bg-slate-700 p-2"
+            name="width"
+            value={350}
+            onClick={handleSettingsChange}
+          >
+            huge
           </button>
         </div>
         <div className="flex gap-4 flex-col">
@@ -59,28 +69,37 @@ const PDFOptionsComponent = () => {
             type="button"
             className="bg-slate-700 p-2"
             name="height"
-            value={200}
+            value={190}
             onClick={handleSettingsChange}
           >
-            200
+            small
           </button>
           <button
             type="button"
             className="bg-slate-700 p-2"
             name="height"
-            value={250}
+            value={225}
             onClick={handleSettingsChange}
           >
-            250
+            medium
           </button>
           <button
             type="button"
             className="bg-slate-700 p-2"
             name="height"
-            value={300}
+            value={280}
             onClick={handleSettingsChange}
           >
-            300
+            big
+          </button>
+          <button
+            type="button"
+            className="bg-slate-700 p-2"
+            name="height"
+            value={350}
+            onClick={handleSettingsChange}
+          >
+            huge
           </button>
         </div>
         <div className="flex gap-4 flex-col">
@@ -94,6 +113,38 @@ const PDFOptionsComponent = () => {
             <option value="fold">Folded Card</option>
             <option value="reverse">Reverse Card</option>
           </select>
+          <div className="flex gap-4 items-center">
+            <p>Question Size</p>
+            <input
+              className="text-slate-600 w-10"
+              type="number"
+              min={12}
+              max={40}
+              onChange={(e) =>
+                setSettings({
+                  ...settings,
+                  questionFontSize: parseInt(e.target.value),
+                })
+              }
+              value={settings.questionFontSize}
+            />
+          </div>
+          <div className="flex gap-4 items-center">
+            <p>Answer Size</p>
+            <input
+              className="text-slate-600 w-10"
+              type="number"
+              min={12}
+              max={40}
+              onChange={(e) =>
+                setSettings({
+                  ...settings,
+                  answerFontSize: parseInt(e.target.value),
+                })
+              }
+              value={settings.answerFontSize}
+            />
+          </div>
         </div>
         <div className="flex gap-4 flex-col">
           <p>Question Color</p>
@@ -117,45 +168,8 @@ const PDFOptionsComponent = () => {
         </div>
       </div>
       <div className="flex gap-4">
-        <div className="mt-4 flex gap-4 flex-col">
-          <p>Changed Card Options:</p>
-          <div>
-            <p>
-              {settings.width} x {settings.height}
-            </p>
-            <p>{settings.mode}</p>
-            <p
-              style={{ color: settings.questionColor }}
-              className="p-2 bg-white"
-            >
-              New question color
-            </p>
-            <p style={{ color: settings.answerColor }} className="p-2 bg-white">
-              New answer color
-            </p>
-          </div>
-        </div>
-        <div className="mt-4 flex gap-4 flex-col">
-          <p>Current Card Options:</p>
-          <div>
-            <p>
-              {currentOptions.width} x {currentOptions.height}
-            </p>
-            <p>{currentOptions.mode}</p>
-            <p
-              style={{ color: currentOptions.questionColor }}
-              className="p-2 bg-white"
-            >
-              Current question color
-            </p>
-            <p
-              style={{ color: currentOptions.answerColor }}
-              className="p-2 bg-white"
-            >
-              Current answer color
-            </p>
-          </div>
-        </div>
+        <DisplayOptions label="New" options={settings} />
+        <DisplayOptions label="Current" options={currentOptions} />
       </div>
       <div className="mt-4 flex gap-4">
         <button onClick={saveAndExit} className="bg-slate-700 p-2">

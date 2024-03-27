@@ -4,12 +4,22 @@ type Props = {
   flashcards: Flashcard[];
   questionColor: string;
   answerColor: string;
+  questionFontSize: number;
+  answerFontSize: number;
+  width: number;
+  height: number;
+  mode: string;
 };
 
 const FlashcardsDocument = ({
   flashcards,
   questionColor,
   answerColor,
+  questionFontSize,
+  answerFontSize,
+  width,
+  height,
+  mode,
 }: Props) => {
   const styles = StyleSheet.create({
     page: {
@@ -19,28 +29,32 @@ const FlashcardsDocument = ({
     },
     section: {
       border: 1,
-      height: "250px",
-      width: "250px",
+      height: height,
+      width: width,
       borderStyle: "dashed",
       justifyContent: "center",
       alignItems: "center",
       gap: "10px",
       padding: "20px",
+      position: "relative",
     },
     number: {
       textAlign: "center",
       fontSize: "20px",
+      position: "absolute",
+      top: "10px",
+      left: "10px",
+      color: "black",
     },
     question: {
-      fontSize: 16,
+      fontSize: questionFontSize,
       textAlign: "center",
-      textDecoration: "underline",
       paddingBottom: "10px",
       maxWidth: "100%",
       color: questionColor,
     },
-    text: {
-      fontSize: 16,
+    answer: {
+      fontSize: answerFontSize,
       textAlign: "center",
       maxWidth: "100%",
       color: answerColor,
@@ -49,7 +63,7 @@ const FlashcardsDocument = ({
 
   return (
     <Document>
-      <Page size="A4" wrap style={styles.page}>
+      <Page size="A4" style={styles.page}>
         {flashcards
           ? flashcards.map((flashcard) => (
               <View key={flashcard.id} style={styles.section}>
@@ -57,7 +71,7 @@ const FlashcardsDocument = ({
                   {flashcard.questionNumber}
                 </Text>
                 <Text style={[styles.question]}>{flashcard.question}</Text>
-                <Text style={styles.text}>{flashcard.answer}</Text>
+                <Text style={styles.answer}>{flashcard.answer}</Text>
               </View>
             ))
           : null}

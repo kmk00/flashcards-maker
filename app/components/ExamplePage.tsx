@@ -26,6 +26,11 @@ const ExamplePage = () => {
           <FlashcardsDocument
             questionColor={currentOptions.questionColor}
             answerColor={currentOptions.answerColor}
+            questionFontSize={currentOptions.questionFontSize}
+            answerFontSize={currentOptions.answerFontSize}
+            width={currentOptions.width}
+            height={currentOptions.height}
+            mode={currentOptions.mode}
             flashcards={flashcards}
           />
         </PDFViewer>

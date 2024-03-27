@@ -11,6 +11,8 @@ type PDFOptions = {
   width: number;
   questionColor: string;
   answerColor: string;
+  questionFontSize: number;
+  answerFontSize: number;
   height: number;
   mode: Mode;
 };
