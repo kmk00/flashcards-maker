@@ -21,7 +21,7 @@ const FlashcardInput = ({ id, questionNumber }: Props) => {
   };
 
   return (
-    <div className=" border-slate-400 border-2 flex flex-col gap-2 mt-3 p-2">
+    <div className=" border-slate-400 relative border-2 flex flex-col gap-2 mt-3 p-2">
       <p>Question {questionNumber}</p>
       <input
         onChange={handleQuestionChange}
