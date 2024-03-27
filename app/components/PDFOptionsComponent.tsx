@@ -30,19 +30,10 @@ const PDFOptionsComponent = () => {
             type="button"
             className="bg-slate-700 p-2"
             name="width"
-            value={190}
+            value={195}
             onClick={handleSettingsChange}
           >
             small
-          </button>
-          <button
-            type="button"
-            className="bg-slate-700 p-2"
-            name="width"
-            value={225}
-            onClick={handleSettingsChange}
-          >
-            medium
           </button>
           <button
             type="button"
@@ -52,15 +43,6 @@ const PDFOptionsComponent = () => {
             onClick={handleSettingsChange}
           >
             big
-          </button>
-          <button
-            type="button"
-            className="bg-slate-700 p-2"
-            name="width"
-            value={350}
-            onClick={handleSettingsChange}
-          >
-            huge
           </button>
         </div>
         <div className="flex gap-4 flex-col">
@@ -69,7 +51,7 @@ const PDFOptionsComponent = () => {
             type="button"
             className="bg-slate-700 p-2"
             name="height"
-            value={190}
+            value={195}
             onClick={handleSettingsChange}
           >
             small
@@ -78,28 +60,10 @@ const PDFOptionsComponent = () => {
             type="button"
             className="bg-slate-700 p-2"
             name="height"
-            value={225}
-            onClick={handleSettingsChange}
-          >
-            medium
-          </button>
-          <button
-            type="button"
-            className="bg-slate-700 p-2"
-            name="height"
-            value={280}
+            value={270}
             onClick={handleSettingsChange}
           >
             big
-          </button>
-          <button
-            type="button"
-            className="bg-slate-700 p-2"
-            name="height"
-            value={350}
-            onClick={handleSettingsChange}
-          >
-            huge
           </button>
         </div>
         <div className="flex gap-4 flex-col">
@@ -111,7 +75,6 @@ const PDFOptionsComponent = () => {
           >
             <option value="single">Single Card</option>
             <option value="fold">Folded Card</option>
-            <option value="reverse">Reverse Card</option>
           </select>
           <div className="flex gap-4 items-center">
             <p>Question Size</p>

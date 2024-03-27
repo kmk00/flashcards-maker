@@ -3,7 +3,6 @@ import { create } from "zustand";
 enum Mode {
   Fold = "fold",
   Single = "single",
-  Reverse = "reverse",
 }
 
 export const usePDFOptions = create<OptionsState>()((set) => ({
@@ -12,11 +11,11 @@ export const usePDFOptions = create<OptionsState>()((set) => ({
     questionColor: "#000000",
     answerColor: "#000000",
     questionFontSize: 16,
-    answerFontSize: 16,
-    width: 250,
-    height: 250,
+    answerFontSize: 14,
+    width: 195,
+    height: 195,
   },
-  showOptions: true,
+  showOptions: false,
   setNewOptions: (newOptions: PDFOptions) =>
     set({ currentOptions: newOptions }),
   displayOptions: () => set({ showOptions: true }),
