@@ -106,15 +106,11 @@ const FlashcardsDocument = ({
             flashcards.map((flashcard) => (
               <View style={styles.foldedGroup} key={flashcard.id}>
                 <View style={styles.foldedCard}>
-                  <Text debug style={styles.question}>
-                    {flashcard.question}
-                  </Text>
+                  <Text style={styles.question}>{flashcard.question}</Text>
                 </View>
                 <View style={styles.divider}></View>
                 <View style={styles.foldedCard}>
-                  <Text debug style={styles.answer}>
-                    {flashcard.answer}
-                  </Text>
+                  <Text style={styles.answer}>{flashcard.answer}</Text>
                 </View>
               </View>
             ))}
