@@ -12,6 +12,8 @@ const FlashcardInput = ({ id, questionNumber }: Props) => {
 
   const { updateFlashcard, deleteFlashcard } = useFlashcardsStore();
 
+  // TODO: add input validation
+
   const handleQuestionChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setQuestion(event.target.value);
   };

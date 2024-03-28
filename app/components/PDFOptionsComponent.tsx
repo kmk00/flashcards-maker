@@ -20,6 +20,9 @@ const PDFOptionsComponent = () => {
     hideOptions();
   };
 
+  // TODO: Add styling to the options
+  // TODO: Split code into the smaller components
+
   return (
     <div className="flex flex-col justify-center">
       <h2>Select options for your PDF file</h2>
