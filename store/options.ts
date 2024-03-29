@@ -7,7 +7,7 @@ enum Mode {
 
 export const usePDFOptions = create<OptionsState>()((set) => ({
   currentOptions: {
-    mode: Mode.Fold,
+    mode: Mode.Single,
     questionColor: "#000000",
     answerColor: "#000000",
     questionFontSize: 16,
