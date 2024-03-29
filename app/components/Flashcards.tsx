@@ -17,9 +17,12 @@ const Flashcards = () => {
   };
 
   return (
-    <>
-      <h1 className="text-2xl">Create Flashcards</h1>
-      <button className="mt-3 mx-auto" onClick={addNewFlashcard}>
+    <div className="flex-1 w-full">
+      <h1 className="text-2xl text-center">Create Flashcards</h1>
+      <button
+        className="mt-3 w-full my-2 py-3 bg-slate-600"
+        onClick={addNewFlashcard}
+      >
         Add new
       </button>
       <div className="w-full flex-col-reverse flex">
@@ -31,7 +34,7 @@ const Flashcards = () => {
           />
         ))}
       </div>
-    </>
+    </div>
   );
 };
 

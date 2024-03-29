@@ -10,7 +10,7 @@ const PDFOptionsButton = () => {
     <>
       {!showOptions && (
         <button
-          className="fixed bottom-5 right-5 text-center"
+          className="fixed lg:bottom-5 bottom-10 right-5 text-center"
           onClick={displayOptions}
         >
           <Image

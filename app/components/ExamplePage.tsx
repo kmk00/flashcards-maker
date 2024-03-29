@@ -22,18 +22,20 @@ const ExamplePage = () => {
   return (
     <>
       {!showOptions ? (
-        <PDFViewer style={{ width: "100%", height: "90dvh" }}>
-          <FlashcardsDocument
-            questionColor={currentOptions.questionColor}
-            answerColor={currentOptions.answerColor}
-            questionFontSize={currentOptions.questionFontSize}
-            answerFontSize={currentOptions.answerFontSize}
-            width={currentOptions.width}
-            height={currentOptions.height}
-            mode={currentOptions.mode}
-            flashcards={flashcards}
-          />
-        </PDFViewer>
+        <div className="hidden w-full lg:block ">
+          <PDFViewer style={{ width: "100%", height: "90dvh" }}>
+            <FlashcardsDocument
+              questionColor={currentOptions.questionColor}
+              answerColor={currentOptions.answerColor}
+              questionFontSize={currentOptions.questionFontSize}
+              answerFontSize={currentOptions.answerFontSize}
+              width={currentOptions.width}
+              height={currentOptions.height}
+              mode={currentOptions.mode}
+              flashcards={flashcards}
+            />
+          </PDFViewer>
+        </div>
       ) : (
         <PDFOptionsComponent />
       )}
