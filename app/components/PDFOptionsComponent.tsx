@@ -26,8 +26,8 @@ const PDFOptionsComponent = () => {
       <h2 className="text-center lg:text-left text-xl">
         Select options for your PDF file
       </h2>
-      <div className="flex flex-wrap justify-center items-center gap-4 mt-4">
-        <div className="flex border-2 border-slate-400 p-2 gap-4 ">
+      <div className="flex flex-wrap justify-center items-stretch gap-4 mt-4">
+        <div className="flex border-2 items-center border-slate-400 p-2 gap-4 ">
           <div className="flex gap-4 flex-col">
             <p>Width</p>
             <Button

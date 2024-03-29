@@ -15,14 +15,14 @@ const DisplayOptions = ({
         <p>Question size: {options.questionFontSize}px</p>
         <p>Answer size: {options.answerFontSize}px</p>
         <p>Current mode: {options.mode}</p>
-        <div className="flex gap-2">
+        <div className="flex items-center gap-2">
           <p>Question color</p>
           <span
             style={{ backgroundColor: options.questionColor }}
             className="w-5 h-5"
           ></span>
         </div>
-        <div className="flex gap-2">
+        <div className="flex items-center gap-2">
           <p>Answer color</p>
           <span
             style={{ backgroundColor: options.answerColor }}
