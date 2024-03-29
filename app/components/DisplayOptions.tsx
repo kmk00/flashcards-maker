@@ -6,7 +6,7 @@ const DisplayOptions = ({
   label: string;
 }) => {
   return (
-    <div className="mt-4 p-2">
+    <div className="mt-4 border-2 border-slate-400 p-2">
       <p className="pr-2">{label} Card Options:</p>
       <div className="flex gap-2 flex-col">
         <p>
