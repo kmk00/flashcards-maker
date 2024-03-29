@@ -2,6 +2,7 @@ import { usePDFOptions } from "@/store/options";
 import { useState } from "react";
 import { HexColorPicker } from "react-colorful";
 import DisplayOptions from "./DisplayOptions";
+import Button from "./Button";
 
 const PDFOptionsComponent = () => {
   const { hideOptions, currentOptions, setNewOptions } = usePDFOptions();
@@ -29,62 +30,50 @@ const PDFOptionsComponent = () => {
         <div className="flex border-2 border-slate-400 p-2 gap-4 ">
           <div className="flex gap-4 flex-col">
             <p>Width</p>
-            <button
-              type="button"
-              className="bg-slate-700 p-2"
-              name="width"
+            <Button
+              label="small"
               value={195}
-              onClick={handleSettingsChange}
-            >
-              small
-            </button>
-            <button
-              type="button"
-              className="bg-slate-700 p-2"
               name="width"
-              value={280}
               onClick={handleSettingsChange}
-            >
-              big
-            </button>
+            />
+            <Button
+              label="big"
+              value={280}
+              name="width"
+              onClick={handleSettingsChange}
+            />
           </div>
           <div className="flex gap-4 flex-col">
             <p>Height</p>
-            <button
-              type="button"
-              className="bg-slate-700 p-2"
-              name="height"
+            <Button
+              label="small"
               value={195}
-              onClick={handleSettingsChange}
-            >
-              small
-            </button>
-            <button
-              type="button"
-              className="bg-slate-700 p-2"
               name="height"
-              value={270}
               onClick={handleSettingsChange}
-            >
-              big
-            </button>
+            />
+            <Button
+              label="big"
+              value={270}
+              name="height"
+              onClick={handleSettingsChange}
+            />
           </div>
-          <div className="flex gap-4 flex-col">
+          <div className="flex gap-4 px-4 flex-col">
             <p>Select Mode</p>
             <select
               value={settings.mode}
               onChange={(e) =>
                 setSettings({ ...settings, mode: e.target.value })
               }
-              className="bg-slate-700 p-2"
+              className="text-slate-200 bg-slate-600 p-2"
             >
               <option value="single">Single Card</option>
               <option value="fold">Folded Card</option>
             </select>
-            <div className="flex gap-4 items-center">
+            <div className="flex gap-4 justify-between items-center">
               <p>Question Size</p>
               <input
-                className="text-slate-600 w-10"
+                className="text-slate-200 bg-slate-600 w-10"
                 type="number"
                 min={12}
                 max={40}
@@ -97,10 +86,10 @@ const PDFOptionsComponent = () => {
                 value={settings.questionFontSize}
               />
             </div>
-            <div className="flex gap-4 items-center">
+            <div className="flex gap-4 justify-between items-center">
               <p>Answer Size</p>
               <input
-                className="text-slate-600 w-10"
+                className="text-slate-200 bg-slate-600 w-10"
                 type="number"
                 min={12}
                 max={40}
@@ -143,12 +132,8 @@ const PDFOptionsComponent = () => {
         <DisplayOptions label="Current" options={currentOptions} />
       </div>
       <div className="mt-4 flex justify-center lg:justify-start gap-4">
-        <button onClick={saveAndExit} className="bg-slate-700 p-2">
-          Save and exit
-        </button>
-        <button onClick={hideOptions} className="bg-slate-700 p-2">
-          Cancel
-        </button>
+        <Button label="Save and exit" onClick={saveAndExit} />
+        <Button label="Cancel" onClick={hideOptions} />
       </div>
     </div>
   );
