@@ -20,7 +20,7 @@ const Flashcards = () => {
   return (
     <div className="flex-1 w-full">
       <h1 className="text-2xl text-center">Create Flashcards</h1>
-      <div className="p-3">
+      <div className="flex p-2 items-center justify-center">
         <Button label="Add new" onClick={addNewFlashcard} />
       </div>
       <div className="w-full flex-col-reverse flex">
