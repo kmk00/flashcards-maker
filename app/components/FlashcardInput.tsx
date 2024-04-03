@@ -1,6 +1,7 @@
 import { useFlashcardsStore } from "@/store/flashcards";
 import { usePDFOptions } from "@/store/options";
 import { useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 
 type Props = {
   id: string;
@@ -65,7 +66,10 @@ const FlashcardInput = ({ id, questionNumber }: Props) => {
   };
 
   return (
-    <div
+    <motion.div
+      initial={{ opacity: 0, scale: 0.9 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 0.3 }}
       className={`${
         isTooLong ? "border-orange-300" : ""
       } border-slate-400 relative border-2 flex flex-col gap-2 mt-3 p-2`}
@@ -111,7 +115,7 @@ const FlashcardInput = ({ id, questionNumber }: Props) => {
           Delete
         </button>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
