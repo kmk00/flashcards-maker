@@ -38,13 +38,13 @@ const PDFOptionsComponent = () => {
             <div className="flex gap-4 flex-col">
               <p>Width</p>
               <Button
-                label="small"
+                label="195px"
                 value={195}
                 name="width"
                 onClick={handleSettingsChange}
               />
               <Button
-                label="big"
+                label="280px"
                 value={280}
                 name="width"
                 onClick={handleSettingsChange}
@@ -53,19 +53,19 @@ const PDFOptionsComponent = () => {
             <div className="flex gap-4 flex-col">
               <p>Height</p>
               <Button
-                label="small"
+                label="195px"
                 value={195}
                 name="height"
                 onClick={handleSettingsChange}
               />
               <Button
-                label="big"
+                label="270px"
                 value={270}
                 name="height"
                 onClick={handleSettingsChange}
               />
             </div>
-            <div className="flex gap-4 px-4 flex-col">
+            <div className="flex gap-4 px-2 flex-col">
               <p>Select Mode</p>
               <select
                 value={settings.mode}
@@ -134,7 +134,7 @@ const PDFOptionsComponent = () => {
             </div>
           </div>
         </div>
-        <div className="flex justify-center gap-4">
+        <div className="sm:flex justify-center block gap-4">
           <DisplayOptions label="New" options={settings} />
           <DisplayOptions label="Current" options={currentOptions} />
         </div>
