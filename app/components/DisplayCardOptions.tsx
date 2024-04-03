@@ -12,8 +12,30 @@ const DisplayOptions = ({
         <p>
           {options.width} x {options.height}
         </p>
-        <p>Question size: {options.questionFontSize}px</p>
-        <p>Answer size: {options.answerFontSize}px</p>
+        <p
+          className={`${
+            options.questionFontSize > 40 || options.questionFontSize < 10
+              ? "text-red-500"
+              : ""
+          }`}
+        >
+          Question size: {options.questionFontSize}px
+        </p>
+        <p
+          className={`${
+            options.answerFontSize > 40 || options.answerFontSize < 10
+              ? "text-red-500"
+              : ""
+          }`}
+        >
+          Answer size: {options.answerFontSize}px
+        </p>
+        {options.questionFontSize > 40 ||
+        options.answerFontSize > 40 ||
+        options.questionFontSize < 10 ||
+        options.answerFontSize < 10 ? (
+          <p className="text-red-500 text-[10px]">Font size range: 10-40px</p>
+        ) : null}
         <p>Current mode: {options.mode}</p>
         <div className="flex items-center gap-2">
           <p>Question color</p>
