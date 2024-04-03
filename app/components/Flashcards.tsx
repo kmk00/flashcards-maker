@@ -12,8 +12,8 @@ const Flashcards = () => {
     addFlashcard({
       id: nanoid(),
       questionNumber: flashcards.length + 1,
-      question: "Type your question here",
-      answer: "Type your answer here",
+      question: "Type your question",
+      answer: "Type your answer",
     });
   };
 

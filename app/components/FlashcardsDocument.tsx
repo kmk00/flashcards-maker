@@ -21,8 +21,6 @@ const FlashcardsDocument = ({
   height,
   mode,
 }: Props) => {
-  console.log(mode);
-
   const styles = StyleSheet.create({
     page: {
       flexDirection: "row",

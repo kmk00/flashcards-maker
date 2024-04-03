@@ -13,8 +13,8 @@ export const useFlashcardsStore = create<FlashcardState>()((set) => ({
     {
       id: nanoid(),
       questionNumber: 1,
-      question: "Type your question here",
-      answer: "Type your answer here",
+      question: "Type your question",
+      answer: "Type your answer",
     },
   ],
   addFlashcard: (flashcard: Flashcard) =>
