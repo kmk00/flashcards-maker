@@ -18,8 +18,25 @@ const PDFOptionsComponent = () => {
   };
 
   const saveAndExit = () => {
+    if (!validateSettings()) {
+      return;
+    }
     setNewOptions(settings);
     hideOptions();
+  };
+
+  const validateSettings = () => {
+    if (settings.questionFontSize > 40 || settings.answerFontSize > 40) {
+      alert("Font size must be less than 40");
+      return false;
+    }
+
+    if (settings.questionFontSize < 10 || settings.answerFontSize < 10) {
+      alert("Font size must be greater than 10");
+      return false;
+    }
+
+    return true;
   };
 
   return (
