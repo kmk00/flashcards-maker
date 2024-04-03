@@ -1,4 +1,3 @@
-import DocumentComponent from "./components/DocumentComponent";
 import ExamplePage from "./components/ExamplePage";
 
 export default function Home() {
