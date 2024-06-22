@@ -1,5 +1,7 @@
 # Printable flashcards generator
 
+[Demo](https://flashcards-maker.vercel.app/)
+
 Web application for creating ready to print flashcards. There are 2 modes of flashcards available:
 - question and answer on a same single card
 - question and answer on a foldable card
